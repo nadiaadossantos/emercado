@@ -1,3 +1,13 @@
+function logueado() {
+    let email = sessionStorage.getItem("email");
+    if (email === null) {
+        window.location.href = "login.html";
+    }
+}
+
+logueado();
+
+
 document.addEventListener("DOMContentLoaded", function(){
     document.getElementById("autos").addEventListener("click", function() {
         localStorage.setItem("catID", 101);

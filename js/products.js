@@ -33,8 +33,12 @@ function showProductsList(array){
     }
 }
 
+
+const catID = 101;
+let PRODUCT_URL = PRODUCTS_URL + "/" + catID + EXT_TYPE;
+
 document.addEventListener("DOMContentLoaded", function(e){
-    getJSONData("https://japceibal.github.io/emercado-api/cats_products/101.json").then(function(resultObj){
+    getJSONData(PRODUCT_URL).then(function(resultObj){
         if (resultObj.status === "ok")
         {
             let productsArray = resultObj.data;

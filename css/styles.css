@@ -1,7 +1,8 @@
 .jumbotron,
 .card-body,
 .container,
-.site-header {
+.site-header,
+.form {
   font-family: 'Raleway', serif !important;
 }
 
@@ -187,4 +188,29 @@ a.custom-card:hover {
 
 .checked {
   color: orange;
+}
+
+.formCont {
+  display: flex;
+  flex-direction: column;
+}
+
+.formCont input {
+  padding: 4px;
+}
+
+.formCont button {
+  margin-top: 20px;
+  color: white;
+  background-color: rgb(35, 93, 219);
+  border-radius: 5px;
+  border-color: #fff;
+  padding: 5px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+#error1, #error2 {
+  color: red;
+  font-size: 15px;
 }
