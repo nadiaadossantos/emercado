@@ -34,7 +34,7 @@ function showProductsList(array){
 }
 
 
-const catID = 101;
+const catID = localStorage.getItem("catID"); //Pauta 2, obtener el listado de la categoría ingresada
 let PRODUCT_URL = PRODUCTS_URL + "/" + catID + EXT_TYPE;
 
 document.addEventListener("DOMContentLoaded", function(e){

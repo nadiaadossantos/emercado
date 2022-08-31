@@ -29,13 +29,13 @@ let password = document.getElementById("password");
 let error1 = document.getElementById("error1");
 let error2 = document.getElementById("error2");
 
-sessionStorage.setItem("email", email);
 
 function enviarFormulario(evento) {
     evento.preventDefault();
 
     let emailvalue = email.value;
     let passvalue = password.value;
+    sessionStorage.setItem("email", email.value);
 
     if (emailvalue.length === 0) {
         error1.innerHTML = "Ingresa tu email";
