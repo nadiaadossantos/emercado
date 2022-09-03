@@ -41,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(PRODUCT_URL).then(function (resultObj) {
         if (resultObj.status === "ok") {
             let productsArray = resultObj.data;
-            sessionStorage.setItem("prodArray", JSON.stringify(productsArray.products));
             showTitle(productsArray);
             showProductsList(productsArray.products);
         }
@@ -59,8 +58,6 @@ const ORDER_DESC_BY_PRICE = "DesPrice";
 const ORDER_BY_PROD_REL = "Rel.";
 let minPrice = undefined;
 let maxPrice = undefined;
-
-//let prodsArray = JSON.parse(sessionStorage.getItem("prodArray"));
 
 function sortProducts(criteria, array) {
     let result = [];
@@ -108,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
             sortProducts(ORDER_BY_PROD_REL, prodsArray);
             showProductsList(prodsArray);
         });
-        
+
         document.getElementById("clearRangeFilter").addEventListener("click", function () {
             document.getElementById("rangeFilterCountMin").value = "";
             document.getElementById("rangeFilterCountMax").value = "";
