@@ -11,11 +11,19 @@ function showTitle(array) {
     `;
 }
 
+// Entrega 3
+
+function setProdID(id) {
+    localStorage.setItem("prodID", id);
+    window.location = "product-info.html"
+}
+
 function showProductsList(array) {
     let htmlContentToAppend = "";
 
     for (let product of array) {
         htmlContentToAppend += `
+        <div onclick="setProdID(${product.id})" class="list-group-item list-group-item-action cursor-active">
             <div class="row">
                 <div class="col-3">
                     <img src="${product.image}" class="img-thumbnail">
@@ -28,6 +36,7 @@ function showProductsList(array) {
                     <p class="mb-1">${product.description}</p>
                 </div>
             </div>
+        </div>
         `
         document.getElementById("prod-list-container").innerHTML = htmlContentToAppend;
     }
