@@ -75,12 +75,36 @@ function showComments(array) {
     document.getElementById("comments").innerHTML = htmlContentToAppend;
 }
 
+//Entrega 4 - Productos relacionados
+
+function setProdID(id) {
+    localStorage.setItem("prodID", id);
+    window.location = "product-info.html"
+}
+
+function showRelatedProducts(array) {
+    let htmlContentToAppend = "";
+    let relProds = array.relatedProducts;
+    for (product of relProds) {
+        htmlContentToAppend += `
+        <div class="col-md-4">
+            <div onclick="setProdID(${product.id})" class="card mb-4 custom-card cursor-active">
+                <img class="bd-placeholder-img card-img-top" src="${product.image}">
+                <h6>${product.name}</h6>
+            </div>
+        </div>
+        `
+    }
+    document.getElementById("related").innerHTML = htmlContentToAppend;
+}
+
 document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(PROD_INFO_URL).then(function (resultObj) {
         if (resultObj.status === "ok") {
             let infoArray = resultObj.data;
             showTitle(infoArray);
             showInfoList(infoArray);
+            showRelatedProducts(infoArray);
         }
     });
 

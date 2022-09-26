@@ -39,3 +39,45 @@ let getJSONData = function(url){
         return result;
     });
 }
+
+// Código modificado a partir de aquí
+function logueado() {
+  let email = sessionStorage.getItem("email");
+  if (email === null) {
+      window.location.href = "login.html";
+  }
+}
+
+logueado();
+
+let userCamp = document.getElementById("user");
+let email = sessionStorage.getItem("email");
+
+//Función que cierra la sesión del usuario
+
+function cerrarSesion() {
+  sessionStorage.clear();
+  localStorage.clear()
+}
+
+//Nombre de usuario como menú desplegable
+
+function nombre() {
+    
+    if (email != null) {
+        userCamp.innerHTML = `
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            ${email}
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+            <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+            <li><a onclick="cerrarSesion()" class="dropdown-item" href="login.html">Cerrar sesión</a></li>
+          </ul>
+        </div>
+        `;
+    }
+}
+
+document.addEventListener("DOMContentLoaded", nombre());
