@@ -37,10 +37,51 @@
   </nav>
   <main>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <div class="text-center p-4">
+        <h2>Carrito de compras</h2>
       </div>
     </div>
+    <div class="container">
+      <h5><b>Artículos a comprar</b></h5>
+      <table class="table table-responsive justify-content-between">
+        <thead class="thead">
+          <tr>
+            <th></th>
+            <th>Nombre</th>
+            <th>Costo</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+          </tr>
+        </thead>
+        <tbody class="tbody justify-content-between">
+          <td class="col-1"><img id="image" class="img-thumbnail" alt=""></td>
+          <td id="name" class="col-2"></td>
+          <td id="cost" class="col-2"></td>
+          <td class="col-2"><input type="number" id="count" min="1" class="col-6"></td>
+          <td id="subtotal" class="col-2"></td>
+        </tbody>
+        <tbody>
+
+        </tbody>
+      </table>
+    </div>
+    <div class="container">
+      <hr>
+      <h5><b>Tipo de envío</b></h5>
+      <input type="radio" name="radio" value=""> Preminum 2 a 5 días (15%) <br>
+      <input type="radio" name="radio" value=""> Express 5 a 8 días (7%) <br>
+      <input type="radio" name="radio" value=""> Standard 12 a 15 días <br>
+      <br>
+      <h5><b>Dirección de envío</b></h5>
+      <label for="calle">Calle:</label> 
+      <input type="text" id="calle" name="calle"> <br> <br>
+      <label for="numero">Número:</label> 
+      <input type="text" id="numero" name="numero"> <br> <br>
+      <label for="esquina">Esquina:</label> 
+      <input type="text" id="esquina" name="esquina">
+      <hr>
+
+
   </main>
   <footer class="text-muted">
     <div class="container">
